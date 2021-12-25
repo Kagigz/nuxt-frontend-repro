@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Logos />
-    <InputEntry />
+    HELLO
   </div>
 </template>
