@@ -6,6 +6,7 @@ body {
   padding: 0;
   background-color: $white;
   font-family: $body-font;
+  color: $black;
 }
 
 // Text
@@ -14,6 +15,16 @@ body {
   font-family: $title-font;
   font-weight: $title-font-weight;
   font-size: $title-font-size;
+}
+
+.medium-title {
+  font-family: $title-font;
+  font-weight: $title-font-weight;
+  font-size: $medium-font-size;
+}
+
+.small-title {
+  font-family: $title-font;
 }
 
 .cta {
@@ -39,6 +50,13 @@ body {
 
 .paragraph {
   line-height: 1.6em;
+}
+
+// Blocks
+
+.background-black{
+  background-color: $black;
+  color: $white;
 }
 
 // Other

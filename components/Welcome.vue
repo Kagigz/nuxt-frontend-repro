@@ -51,16 +51,16 @@ const getArrowClass = () => {
 </script>
 
 <template>
-  <div class="h-screen flex">
+  <div class="md:h-screen flex">
     <div
       ref="imgEl"
-      class="h-screen w-1/2"
+      class="md:h-screen w-1/2"
       @mousemove="setImgIndex"
       @mouseleave="resetImgIndex"
     >
       <img :src="getImgPath()" class="pictures" />
     </div>
-    <div class="h-screen w-1/2">
+    <div class="md:h-screen w-1/2">
       <div class="h-full flex flex-col justify-center items-center">
         <div class="title">
           <div class="red-filled mb-8">HELLO THERE</div>
