@@ -1,12 +1,56 @@
+@import './theme.scss';
+
 html,
-body,
-#app {
-  height: 100vh;
+body {
   margin: 0;
   padding: 0;
+  background-color: $white;
+  font-family: $body-font;
 }
 
-html.dark {
-  background: #222;
-  color: white;
+// Text
+
+.title {
+  font-family: $title-font;
+  font-weight: $title-font-weight;
+  font-size: $title-font-size;
 }
+
+.cta {
+  font-family: $cta-font;
+  font-weight: $cta-font-weight;
+  font-size: $cta-font-size;
+}
+
+.red-filled {
+  background-color: $red;
+  color: $white;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+.red {
+  color: $red;
+}
+
+.bold {
+  font-weight: $bold-weight;
+}
+
+.paragraph {
+  line-height: 1.6em;
+}
+
+// Other
+
+.click {
+  cursor: pointer;
+}
+
+// Animations
+
+.animate-bounce-hover{
+  -webkit-animation: bounce-top 0.9s both;
+	        animation: bounce-top 0.9s both;
+}
+

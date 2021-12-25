@@ -4,3 +4,4 @@ node_modules
 dist
 wp-dist
 .output
+.vscode

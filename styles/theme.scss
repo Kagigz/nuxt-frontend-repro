@@ -1,5 +1,33 @@
-$white: #FDFCF8;
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+$body-font: 'Quicksand', sans-serif;
+
+$nav-font: 'Lexend Deca', sans-serif;
+$nav-font-weight: 300;
+
+$title-font: 'Lexend Deca', sans-serif;
+$title-font-weight: 400;
+$title-font-size: 2em;
+
+$cta-font: 'Lexend Deca', sans-serif;
+$cta-font-weight: 400;
+$cta-font-size: 0.9em;
+
+$bold-weight: 500;
+
+// COLORS
+
+$white: #fdfcf8;
 $black: #131315;
-$red: #C80226;
-$pink: #E59B93;
+$red: #c80226;
+$pink: #e59b93;
 $dark-grey: #514553;
+
+
+// ANIMATIONS
+
+@import "./animations.scss";
+
+$bounce-top: bounce-top 0.9s both;
+
