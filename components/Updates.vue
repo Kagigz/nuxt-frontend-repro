@@ -49,10 +49,10 @@ const getUpdateIconClass = (i: number) => {
           class="icon-big"
           v-html="$feathericons['chevron-right'].toSvg()"
         ></div>
-        <div class="paragraph medium-text mx-10">
+        <p class="paragraph medium-text mx-10">
           For the beginning of this year, I've set up new processes to be able
           to produce more content, more frequently. Stay tuned!
-        </div>
+        </p>
         <div
           class="icon-big"
           v-html="$feathericons['chevron-left'].toSvg()"
@@ -97,10 +97,12 @@ const getUpdateIconClass = (i: number) => {
     <!-- SUSCRIBE CTA -->
     <div class="mt-24 flex flex-col justify-center items-center">
       <div class="medium-text">Interested in getting updates?</div>
-      <div class="cta mt-3 click">
-        <div>SUSCRIBE TO MY NEWSLETTER</div>
-        <div class="mt-2" v-html="$feathericons['arrow-down'].toSvg()"></div>
-      </div>
+      <NuxtLink to="#newsletter">
+        <div class="cta mt-3 click">
+          <div>SUSCRIBE TO MY NEWSLETTER</div>
+          <div class="mt-2" v-html="$feathericons['arrow-down'].toSvg()"></div>
+        </div>
+      </NuxtLink>
     </div>
   </div>
 </template>

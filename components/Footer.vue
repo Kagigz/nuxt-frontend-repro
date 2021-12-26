@@ -46,11 +46,11 @@ const getIconClass = () => {
       <div>
         <div class="small-title pt-2">LEARN</div>
         <div class="footer-links mt-2 md:mt-6">
-          <ul>
-            <li>Ebook</li>
-            <li>Courses</li>
-            <li>Blog</li>
-            <li>Videos</li>
+          <ul class="flex flex-col items-start">
+            <li class="link">Ebook</li>
+            <li class="link">Courses</li>
+            <li class="link">Blog</li>
+            <li class="link">Videos</li>
           </ul>
         </div>
       </div>
