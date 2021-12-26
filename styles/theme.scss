@@ -14,8 +14,10 @@ $cta-font: 'Lexend Deca', sans-serif;
 $cta-font-weight: 400;
 $cta-font-size: 0.9em;
 
+$light-weight: 300;
 $bold-weight: 500;
-$medium-font-size: 1.6em;
+$big-font-size: 1.6em;
+$medium-font-size: 1.2em;
 
 // COLORS
 
@@ -24,6 +26,9 @@ $black: #131315;
 $red: #c80226;
 $pink: #e59b93;
 $dark-grey: #514553;
+
+$red-drop: 8px 8px 0 0 $red;
+$red-drop-reverse: -8px 8px 0 0 $red;
 
 
 // ANIMATIONS

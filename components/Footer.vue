@@ -17,7 +17,7 @@ const getIconClass = () => {
 </script>
 
 <template>
-  <footer class="background-black px-16 pt-8 pb-4 text-center md:text-left">
+  <div class="background-black px-16 pt-8 pb-4 text-center md:text-left">
     <div class="grid gap-y-8 md:grid-cols-5 sm:grid-cols-3">
       <!-- CONTACT -->
       <div class="md:col-span-2 sm:col-span-3">
@@ -69,9 +69,5 @@ const getIconClass = () => {
     <div class="text-center mt-8 md:mt-4">
       Made with ❤️ in 2021 by Katia Gil Guzman
     </div>
-  </footer>
+  </div>
 </template>
-
-<style lang="scss">
-@import '~/styles/theme.scss';
-</style>

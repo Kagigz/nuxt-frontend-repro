@@ -20,7 +20,7 @@ body {
 .medium-title {
   font-family: $title-font;
   font-weight: $title-font-weight;
-  font-size: $medium-font-size;
+  font-size: $big-font-size;
 }
 
 .small-title {
@@ -31,11 +31,34 @@ body {
   font-family: $cta-font;
   font-weight: $cta-font-weight;
   font-size: $cta-font-size;
+  transition: all .2s ease-in-out;
+}
+
+.big-cta {
+  font-family: $cta-font;
+  font-weight: $light-weight;
+  font-size: $medium-font-size;
+  transition: all .2s ease-in-out;
+}
+
+.cta:hover{
+  transform: scale(1.05)
+}
+
+.big-cta:hover{
+  transform: scale(1.1)
 }
 
 .red-filled {
   background-color: $red;
   color: $white;
+  display: inline-block;
+  padding: 4px 8px;
+}
+
+.white-filled {
+  background-color: $white;
+  color: $red;
   display: inline-block;
   padding: 4px 8px;
 }
@@ -52,6 +75,18 @@ body {
   line-height: 1.6em;
 }
 
+.medium-text {
+  font-size: $medium-font-size;
+}
+
+.big-text {
+  font-size: $big-font-size;
+}
+
+.red-hover:hover{
+  color: $red;
+}
+
 // Blocks
 
 .background-black{
@@ -59,10 +94,22 @@ body {
   color: $white;
 }
 
+.red-drop{
+  box-shadow: $red-drop;
+}
+
+.red-drop-reverse{
+  box-shadow: $red-drop-reverse;
+}
+
 // Other
 
 .click {
   cursor: pointer;
+}
+
+.icon-big{
+  transform: scale(1.5);
 }
 
 // Animations

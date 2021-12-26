@@ -51,7 +51,7 @@ const getArrowClass = () => {
 </script>
 
 <template>
-  <div class="md:h-screen grid md:grid-cols-2">
+  <div id="welcome" class="md:h-screen grid md:grid-cols-2">
     <div class="md:h-screen md:order-last">
       <div class="h-full flex flex-col justify-center items-center pt-16">
         <div class="title">
@@ -76,10 +76,12 @@ const getArrowClass = () => {
           @mouseleave="setBounce(false)"
         >
           <div class="cta red mb-1">LATEST NEWS</div>
-          <div
-            :class="getArrowClass()"
-            v-html="$feathericons['arrow-down'].toSvg()"
-          ></div>
+          <NuxtLink to="#updates">
+            <div
+              :class="getArrowClass()"
+              v-html="$feathericons['arrow-down'].toSvg()"
+            ></div>
+          </NuxtLink>
         </div>
       </div>
     </div>
