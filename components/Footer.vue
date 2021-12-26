@@ -17,7 +17,7 @@ const getIconClass = () => {
 </script>
 
 <template>
-  <footer class="background-black px-16 pt-8 pb-4">
+  <footer class="background-black px-16 pt-8 pb-4 text-center md:text-left">
     <div class="grid gap-y-8 md:grid-cols-5 sm:grid-cols-3">
       <!-- CONTACT -->
       <div class="md:col-span-2 sm:col-span-3">
@@ -25,7 +25,7 @@ const getIconClass = () => {
         <div class="cta mt-6">CONTACT ME</div>
         <div>katiaggpro@gmail.com</div>
 
-        <div class="socials flex mt-10">
+        <div class="socials flex mt-10 justify-center md:justify-start">
           <div v-for="(n, i) in socials" :key="i" :class="getIconClass()">
             <div v-html="$feathericons[n].toSvg()"></div>
           </div>

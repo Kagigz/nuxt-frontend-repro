@@ -51,17 +51,9 @@ const getArrowClass = () => {
 </script>
 
 <template>
-  <div class="md:h-screen flex">
-    <div
-      ref="imgEl"
-      class="md:h-screen w-1/2"
-      @mousemove="setImgIndex"
-      @mouseleave="resetImgIndex"
-    >
-      <img :src="getImgPath()" class="pictures" />
-    </div>
-    <div class="md:h-screen w-1/2">
-      <div class="h-full flex flex-col justify-center items-center">
+  <div class="md:h-screen grid md:grid-cols-2">
+    <div class="md:h-screen md:order-last">
+      <div class="h-full flex flex-col justify-center items-center pt-16">
         <div class="title">
           <div class="red-filled mb-8">HELLO THERE</div>
         </div>
@@ -90,6 +82,14 @@ const getArrowClass = () => {
           ></div>
         </div>
       </div>
+    </div>
+    <div
+      ref="imgEl"
+      class="md:h-screen"
+      @mousemove="setImgIndex"
+      @mouseleave="resetImgIndex"
+    >
+      <img :src="getImgPath()" class="pictures" />
     </div>
   </div>
 </template>
