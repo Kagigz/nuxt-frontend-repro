@@ -3,6 +3,7 @@ const navbar = ref(null)
 
 const navbarState = reactive({
   background: '',
+  modalShowing: false,
 })
 
 const updateScroll = () => {
@@ -16,6 +17,14 @@ const getNavbarClass = () => {
   return `${'navbar py-2 px-4 md:py-6 md:px-8' + ' '}${navbarState.background}`
 }
 
+const displayMenuModal = () => {
+  navbarState.modalShowing = true
+}
+
+const closeMenuModal = () => {
+  navbarState.modalShowing = false
+}
+
 onMounted(() => {
   window.addEventListener('scroll', updateScroll)
 })
@@ -23,9 +32,10 @@ onMounted(() => {
 
 <template>
   <div ref="navbar" :class="getNavbarClass()">
-    <div class="w-full flex">
+    <NavModal :visible="navbarState.modalShowing" @close="closeMenuModal" />
+    <div class="w-full flex justify-end">
       <!-- NAV LINKS -->
-      <div class="w-full flex flex-grow items-center justify-end">
+      <div class="hidden md:flex w-full flex-grow items-center justify-end">
         <NuxtLink class="nav-link nav-link-selected" to="#home">
           HOME
         </NuxtLink>
@@ -65,14 +75,14 @@ onMounted(() => {
       </div>
 
       <!-- TOGGLE BUTTON -->
-      <div class="block lg:hidden">
+      <div class="block nav-toggle md:hidden" @click="displayMenuModal">
         <div v-html="$feathericons['menu'].toSvg()"></div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~/styles/theme.scss';
 
 .navbar {
@@ -135,5 +145,9 @@ onMounted(() => {
 
 .nav-dropdown-link {
   margin: 4px 0px;
+}
+
+.nav-toggle {
+  cursor: pointer;
 }
 </style>
