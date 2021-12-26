@@ -1,10 +1,57 @@
 <script setup lang="ts">
 const navbar = ref(null)
+const route = useRoute()
 
 const navbarState = reactive({
   background: '',
   modalShowing: false,
 })
+
+const links = [
+  {
+    id: 'index',
+    path: '',
+    label: 'HOME',
+  },
+  {
+    id: 'about',
+    path: 'about',
+    label: 'ABOUT',
+  },
+  {
+    id: 'assets',
+    path: 'assets',
+    label: 'ASSETS',
+  },
+  {
+    id: 'courses',
+    path: 'courses',
+    label: 'COURSES',
+  },
+  {
+    id: 'blog',
+    path: 'blog',
+    label: 'BLOG',
+  },
+]
+
+const linksMore = [
+  {
+    id: 'ebook',
+    path: 'ebook',
+    label: 'EBOOK',
+  },
+  {
+    id: 'talks',
+    path: 'talks',
+    label: 'TALKS',
+  },
+  {
+    id: 'links',
+    path: 'links',
+    label: 'LINKS',
+  },
+]
 
 const updateScroll = () => {
   const scrollPosition = window.scrollY
@@ -23,7 +70,6 @@ const displayMenuModal = () => {
 
 const closeMenuModal = () => {
   navbarState.modalShowing = false
-  console.log('close')
 }
 
 onMounted(() => {
@@ -37,13 +83,16 @@ onMounted(() => {
     <div class="w-full flex justify-end">
       <!-- NAV LINKS -->
       <div class="hidden md:flex w-full flex-grow items-center justify-end">
-        <NuxtLink class="nav-link nav-link-selected" to="#home">
-          HOME
-        </NuxtLink>
-        <NuxtLink class="nav-link" to="#"> ABOUT </NuxtLink>
-        <NuxtLink class="nav-link" to="#"> ASSETS </NuxtLink>
-        <NuxtLink class="nav-link" to="#"> COURSES </NuxtLink>
-        <NuxtLink class="nav-link" to="#"> BLOG </NuxtLink>
+        <div v-for="n in links" :key="n.id">
+          <NuxtLink
+            :class="`nav-link ${
+              route.name === n.id ? 'nav-link-selected' : ''
+            }`"
+            :to="`/${n.path}`"
+          >
+            {{ n.label }}
+          </NuxtLink>
+        </div>
         <div class="nav-dropdown">
           <div class="nav-dropdown-button">
             MORE
@@ -56,19 +105,14 @@ onMounted(() => {
             class="py-1 nav-dropdown-menu md:mt-6 hidden"
             aria-labelledby="dropdownButton"
           >
-            <li>
-              <NuxtLink class="nav-link nav-dropdown-link" to="#">
-                EBOOK
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink class="nav-link nav-dropdown-link" to="#">
-                TALKS
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink class="nav-link nav-dropdown-link" to="#">
-                LINKS
+            <li v-for="n in linksMore" :key="n.id">
+              <NuxtLink
+                :class="`nav-link nav-dropdown-link ${
+                  route.name === n.id ? 'nav-link-selected' : ''
+                }`"
+                :to="`/${n.path}`"
+              >
+                {{ n.label }}
               </NuxtLink>
             </li>
           </ul>

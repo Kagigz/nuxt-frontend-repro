@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const routeModal = useRoute()
+
 const props = defineProps({
   visible: {
     type: Boolean,
@@ -7,6 +9,52 @@ const props = defineProps({
   },
 })
 const emit = defineEmits(['close'])
+
+const linksModal = [
+  {
+    id: 'index',
+    path: '',
+    label: 'HOME',
+  },
+  {
+    id: 'about',
+    path: 'about',
+    label: 'ABOUT',
+  },
+  {
+    id: 'assets',
+    path: 'assets',
+    label: 'ASSETS',
+  },
+  {
+    id: 'courses',
+    path: 'courses',
+    label: 'COURSES',
+  },
+  {
+    id: 'blog',
+    path: 'blog',
+    label: 'BLOG',
+  },
+]
+
+const linksMoreModal = [
+  {
+    id: 'ebook',
+    path: 'ebook',
+    label: 'EBOOK',
+  },
+  {
+    id: 'talks',
+    path: 'talks',
+    label: 'TALKS',
+  },
+  {
+    id: 'links',
+    path: 'links',
+    label: 'LINKS',
+  },
+]
 
 const navbarModalState = reactive({
   dropdownVisible: false,
@@ -31,21 +79,17 @@ const toggleDropdown = () => {
     </div>
     <!-- NAV LINKS -->
     <div class="nav-links h-full flex flex-col justify-center items-center">
-      <NuxtLink class="nav-link nav-link-selected" to="/">
-        <span @click="emit('close')">HOME</span>
-      </NuxtLink>
-      <NuxtLink class="nav-link" to="/about">
-        <span @click="emit('close')">ABOUT</span>
-      </NuxtLink>
-      <NuxtLink class="nav-link" to="/assets">
-        <span @click="emit('close')">ASSETS</span>
-      </NuxtLink>
-      <NuxtLink class="nav-link" to="/courses">
-        <span @click="emit('close')"> COURSES</span>
-      </NuxtLink>
-      <NuxtLink class="nav-link" to="/blog">
-        <span @click="emit('close')">BLOG</span>
-      </NuxtLink>
+      <div v-for="n in linksModal" :key="n.id">
+        <NuxtLink
+          :class="`nav-link ${
+            routeModal.name === n.id ? 'nav-link-selected' : ''
+          }`"
+          :to="`/${n.path}`"
+        >
+          <span @click="emit('close')">{{ n.label }}</span>
+        </NuxtLink>
+      </div>
+
       <div class="nav-dropdown">
         <div class="nav-dropdown-button" @click="toggleDropdown">
           MORE
@@ -59,19 +103,14 @@ const toggleDropdown = () => {
           class="py-1 nav-dropdown-menu md:mt-6"
           aria-labelledby="dropdownButton"
         >
-          <li>
-            <NuxtLink class="nav-link nav-dropdown-link" to="/ebook">
-              <span @click="emit('close')">EBOOK</span>
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="nav-link nav-dropdown-link" to="/talks">
-              <span @click="emit('close')">TALKS</span>
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="nav-link nav-dropdown-link" to="/links">
-              <span @click="emit('close')">LINKS</span>
+          <li v-for="n in linksMoreModal" :key="n.id">
+            <NuxtLink
+              :class="`nav-link nav-dropdown-link ${
+                routeModal.name === n.id ? 'nav-link-selected' : ''
+              }`"
+              :to="`/${n.path}`"
+            >
+              <span @click="emit('close')">{{ n.label }}</span>
             </NuxtLink>
           </li>
         </ul>
