@@ -66,7 +66,7 @@ const getIconClass = () => {
         </div>
       </div>
     </div>
-    <div class="text-center mt-8 md:mt-4">
+    <div class="text-center small-text mt-8 md:mt-4">
       Made with ❤️ in 2021 by Katia Gil Guzman
     </div>
   </div>

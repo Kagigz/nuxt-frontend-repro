@@ -110,6 +110,9 @@ const latestNews = [
             <input class="input focus:outline-none" type="email" name="Email" />
           </div>
         </div>
+        <div class="mt-6 flex justify-center">
+          <div class="button black-drop cta">SUSCRIBE</div>
+        </div>
       </div>
     </div>
   </div>
