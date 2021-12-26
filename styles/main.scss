@@ -104,32 +104,36 @@ body {
   color: $pink;
 }
 
-.link{
-  cursor: pointer;
-  display: inline-block;
-  transition: all 0.2s ease-in;
+.text-ellipsis{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-// .link:before,
-// .link:after{
-//   padding: 0;
-//   margin: 0;
-//   box-sizing: border-box;
-// }
+.underlined-link{
+  cursor: pointer;
+  display: inline-block;
+  background:  no-repeat 0 100%;
+  background-image: linear-gradient($pink, $pink);
+  background-size: 100% 2px;
+  transition: background-size .2s ease;
+}
 
-// .link:hover{
-//   background-color: $red;
-//   color: $white;
-//   //padding: 4px 8px;
-//   display: inline-block;
-// }
+.underlined-link:hover{
+  background-size: 100% 8px;
+}
 
-.link:hover{
-  background: linear-gradient(
-    to bottom,
-    transparent 60%,
-    $pink 40%
-  );
+.hover-link{
+  cursor: pointer;
+  display: inline-block;
+  background:  no-repeat 0 100%;
+  background-image: linear-gradient($pink, $pink);
+  background-size: 0% 2px;
+  transition: background-size .3s ease;
+}
+
+.hover-link:hover{
+  background-size: 100% 2px;
 }
 
 // Blocks
@@ -149,7 +153,7 @@ body {
 
 // Other
 
-.click {
+.click{
   cursor: pointer;
 }
 

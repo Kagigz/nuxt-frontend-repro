@@ -75,7 +75,7 @@ const latestNews = [
               class="pink mr-2 flex items-center"
               v-html="$feathericons['chevron-right'].toSvg()"
             ></div>
-            <NuxtLink :to="n.link" class="link">
+            <NuxtLink :to="n.link" class="hover-link">
               {{ n.name }}
             </NuxtLink>
           </li>
@@ -86,7 +86,7 @@ const latestNews = [
       <div class="md:col-span-3">
         <div class="red text-center">
           If this sounds interesting to you, subscribe to get the latest updates
-          and get my free Tech Resources List!
+          and get my <span class="bold">free Tech Resources List!</span>
         </div>
         <div class="mt-6 md:text-right">
           <div class="form-item">

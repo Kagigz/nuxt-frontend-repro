@@ -35,10 +35,10 @@ const getIconClass = () => {
       <div>
         <div class="small-title pt-2">ASSETS</div>
         <div class="footer-links mt-2 md:mt-6">
-          <ul>
-            <li>Tech Resources</li>
-            <li>Asset 2</li>
-            <li>Asset 3</li>
+          <ul class="flex flex-col items-center md:items-start">
+            <li class="hover-link">Tech Resources</li>
+            <li class="hover-link">Asset 2</li>
+            <li class="hover-link">Asset 3</li>
           </ul>
         </div>
       </div>
@@ -46,11 +46,11 @@ const getIconClass = () => {
       <div>
         <div class="small-title pt-2">LEARN</div>
         <div class="footer-links mt-2 md:mt-6">
-          <ul class="flex flex-col items-start">
-            <li class="link">Ebook</li>
-            <li class="link">Courses</li>
-            <li class="link">Blog</li>
-            <li class="link">Videos</li>
+          <ul class="flex flex-col items-center md:items-start">
+            <li class="hover-link">Ebook</li>
+            <li class="hover-link">Courses</li>
+            <li class="hover-link">Blog</li>
+            <li class="hover-link">Videos</li>
           </ul>
         </div>
       </div>
@@ -58,10 +58,10 @@ const getIconClass = () => {
       <div>
         <div class="small-title pt-2">MORE</div>
         <div class="footer-links mt-2 md:mt-6">
-          <ul>
-            <li>About</li>
-            <li>Terms of Service</li>
-            <li>Privacy Policy</li>
+          <ul class="flex flex-col items-center md:items-start">
+            <li class="hover-link">About</li>
+            <li class="hover-link">Terms of Service</li>
+            <li class="hover-link">Privacy Policy</li>
           </ul>
         </div>
       </div>
