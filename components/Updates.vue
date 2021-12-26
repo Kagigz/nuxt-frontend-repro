@@ -40,7 +40,7 @@ const getUpdateIconClass = (i: number) => {
 </script>
 
 <template>
-  <div id="updates" class="background-black pt-18 pb-12 text-center">
+  <div id="updates" class="background-black pt-24 pb-12 text-center">
     <!-- MONTHLY UPDATE -->
     <div>
       <div class="title white-filled">MONTHLY UPDATE</div>
@@ -98,7 +98,7 @@ const getUpdateIconClass = (i: number) => {
     <div class="mt-24 flex flex-col justify-center items-center">
       <div class="medium-text">Interested in getting updates?</div>
       <NuxtLink to="#newsletter">
-        <div class="cta mt-3 click">
+        <div class="cta mt-3 click flex justify-center items-center flex-col">
           <div>SUSCRIBE TO MY NEWSLETTER</div>
           <div class="mt-2" v-html="$feathericons['arrow-down'].toSvg()"></div>
         </div>

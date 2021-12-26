@@ -111,7 +111,7 @@ const latestNews = [
           </div>
         </div>
         <div class="mt-6 flex justify-center">
-          <div class="button black-drop cta">SUSCRIBE</div>
+          <button class="button black-drop cta">SUSCRIBE</button>
         </div>
       </div>
     </div>

@@ -147,6 +147,10 @@ body {
   color: $white;
 }
 
+.background-white{
+  background-color: $white;
+}
+
 .red-drop{
   box-shadow: $red-drop;
 }
@@ -159,7 +163,6 @@ body {
   box-shadow: $black-drop;
 }
 
-
 // Other
 
 .click{
@@ -168,6 +171,10 @@ body {
 
 .icon-big{
   transform: scale(1.5);
+}
+
+.icon-small{
+  transform: scale(0.8);
 }
 
 .input{

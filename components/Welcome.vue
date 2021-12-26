@@ -51,7 +51,7 @@ const getArrowClass = () => {
 </script>
 
 <template>
-  <div id="welcome" class="md:h-screen grid md:grid-cols-2">
+  <div id="home" class="md:h-screen grid md:grid-cols-2">
     <div class="md:h-screen md:order-last">
       <div class="h-full flex flex-col justify-center items-center pt-16">
         <div class="title">
