@@ -31,11 +31,21 @@ const toggleDropdown = () => {
     </div>
     <!-- NAV LINKS -->
     <div class="nav-links h-full flex flex-col justify-center items-center">
-      <NuxtLink class="nav-link nav-link-selected" to="#home"> HOME </NuxtLink>
-      <NuxtLink class="nav-link" to="#"> ABOUT </NuxtLink>
-      <NuxtLink class="nav-link" to="#"> ASSETS </NuxtLink>
-      <NuxtLink class="nav-link" to="#"> COURSES </NuxtLink>
-      <NuxtLink class="nav-link" to="#"> BLOG </NuxtLink>
+      <NuxtLink class="nav-link nav-link-selected" to="/">
+        <span @click="emit('close')">HOME</span>
+      </NuxtLink>
+      <NuxtLink class="nav-link" to="/about">
+        <span @click="emit('close')">ABOUT</span>
+      </NuxtLink>
+      <NuxtLink class="nav-link" to="/assets">
+        <span @click="emit('close')">ASSETS</span>
+      </NuxtLink>
+      <NuxtLink class="nav-link" to="/courses">
+        <span @click="emit('close')"> COURSES</span>
+      </NuxtLink>
+      <NuxtLink class="nav-link" to="/blog">
+        <span @click="emit('close')">BLOG</span>
+      </NuxtLink>
       <div class="nav-dropdown">
         <div class="nav-dropdown-button" @click="toggleDropdown">
           MORE
@@ -46,22 +56,22 @@ const toggleDropdown = () => {
         </div>
         <ul
           v-if="navbarModalState.dropdownVisible"
-          class="py-1 nav-dropdown-menu md:mt-6 hidden"
+          class="py-1 nav-dropdown-menu md:mt-6"
           aria-labelledby="dropdownButton"
         >
           <li>
-            <NuxtLink class="nav-link nav-dropdown-link" to="#">
-              EBOOK
+            <NuxtLink class="nav-link nav-dropdown-link" to="/ebook">
+              <span @click="emit('close')">EBOOK</span>
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="nav-link nav-dropdown-link" to="#">
-              TALKS
+            <NuxtLink class="nav-link nav-dropdown-link" to="/talks">
+              <span @click="emit('close')">TALKS</span>
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="nav-link nav-dropdown-link" to="#">
-              LINKS
+            <NuxtLink class="nav-link nav-dropdown-link" to="/links">
+              <span @click="emit('close')">LINKS</span>
             </NuxtLink>
           </li>
         </ul>

@@ -23,6 +23,7 @@ const displayMenuModal = () => {
 
 const closeMenuModal = () => {
   navbarState.modalShowing = false
+  console.log('close')
 }
 
 onMounted(() => {
