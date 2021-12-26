@@ -22,7 +22,7 @@ const getIconClass = () => {
       <!-- CONTACT -->
       <div class="md:col-span-2 sm:col-span-3">
         <div class="medium-title">KATIA.GG</div>
-        <div class="cta mt-6">CONTACT ME</div>
+        <div class="xs-title mt-6">CONTACT ME</div>
         <div>katiaggpro@gmail.com</div>
 
         <div class="socials flex mt-10 justify-center md:justify-start">

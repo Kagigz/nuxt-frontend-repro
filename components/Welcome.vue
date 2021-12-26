@@ -70,19 +70,23 @@ const getArrowClass = () => {
             <span class="bold">sharing those learnings</span> to help others.
           </p>
         </div>
-        <div
-          class="mt-24 flex justify-center items-center flex-col"
-          @mouseenter="setBounce(true)"
-          @mouseleave="setBounce(false)"
-        >
-          <div class="cta red mb-1">LATEST NEWS</div>
-          <NuxtLink to="#updates">
-            <div
-              :class="getArrowClass()"
-              v-html="$feathericons['arrow-down'].toSvg()"
-            ></div>
-          </NuxtLink>
-        </div>
+        <NuxtLink to="#updates">
+          <div
+            class="
+              mt-24
+              cta
+              red
+              flex
+              justify-center
+              items-center
+              flex-col
+              click
+            "
+          >
+            <div class="mb-1">LATEST NEWS</div>
+            <div v-html="$feathericons['arrow-down'].toSvg()"></div>
+          </div>
+        </NuxtLink>
       </div>
     </div>
     <div

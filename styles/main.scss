@@ -27,6 +27,11 @@ body {
   font-family: $title-font;
 }
 
+.xs-title{
+  font-family: $title-font;
+  font-size: $small-font-size;
+}
+
 .cta {
   font-family: $cta-font;
   font-weight: $cta-font-weight;

@@ -65,7 +65,7 @@ const getUpdateIconClass = (i: number) => {
       <div
         v-for="(n, i) in updates"
         :key="i"
-        class="grid md:grid-cols-2 gap-y-6 mb-12 items-center"
+        class="grid md:grid-cols-2 gap-y-6 mb-16 items-center"
       >
         <div :class="getUpdateClass(i)">
           <div :class="getUpdateBlockClass(i)"></div>
@@ -92,6 +92,14 @@ const getUpdateIconClass = (i: number) => {
             v-html="$feathericons[n.icon].toSvg()"
           ></div>
         </div>
+      </div>
+    </div>
+    <!-- SUSCRIBE CTA -->
+    <div class="mt-24 flex flex-col justify-center items-center">
+      <div class="medium-text">Interested in getting updates?</div>
+      <div class="cta mt-3 click">
+        <div>SUSCRIBE TO MY NEWSLETTER</div>
+        <div class="mt-2" v-html="$feathericons['arrow-down'].toSvg()"></div>
       </div>
     </div>
   </div>
