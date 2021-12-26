@@ -100,10 +100,14 @@ body {
   color: $red;
 }
 
+.pink-hover:hover{
+  color: $pink;
+}
+
 .link{
   cursor: pointer;
   display: inline-block;
-  //transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in;
 }
 
 // .link:before,
@@ -125,7 +129,7 @@ body {
     to bottom,
     transparent 60%,
     $pink 40%
-  )
+  );
 }
 
 // Blocks
@@ -151,6 +155,23 @@ body {
 
 .icon-big{
   transform: scale(1.5);
+}
+
+.input{
+  border: 1px solid $dark-grey;
+  padding: 4px 8px;
+  margin: 8px 0;
+  width: 100%;
+  color: $dark-grey;
+}
+
+.input:focus{
+  border: 1px solid $red;
+  border-radius: 0;
+}
+
+.form-item{
+  margin: 8px 4px;
 }
 
 // Animations

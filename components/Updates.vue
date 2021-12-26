@@ -75,7 +75,7 @@ const getUpdateIconClass = (i: number) => {
             flex
             items-center
             big-cta
-            red-hover
+            pink-hover
             justify-center
             click
             mt-4
