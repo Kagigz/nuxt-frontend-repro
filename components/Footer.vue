@@ -1,19 +1,77 @@
 <script setup lang="ts">
-const state = reactive({
-  bounce: false,
+const iconState = reactive({
+  bounce: [false, false, false, false],
 })
 
-const socials = ['twitter', 'instagram', 'github', 'youtube']
+const socials = [
+  {
+    icon: 'linkedin',
+    link: 'https://linkedin.com/in/katiagilguzman',
+  },
+  {
+    icon: 'twitter',
+    link: 'https://twitter.com/kagigz',
+  },
+  //  {
+  //   icon: 'instagram',
+  //   link: ,
+  //  },
+  {
+    icon: 'github',
+    link: 'https://github.com/Kagigz',
+  },
+  //  {
+  //   icon: 'youtube',
+  //   link: ,
+  //  },
+]
 
-const setBounce = (bounce: boolean) => {
-  state.bounce = bounce
+const setIconBounce = (index: number, bounce: boolean) => {
+  iconState.bounce[index] = bounce
 }
 
-const getIconClass = () => {
+const getIconClass = (index: number) => {
   let className = 'click mr-3'
-  if (state.bounce) className += ' animate-bounce-hover'
+  if (iconState.bounce[index]) className += ' animate-bounce-hover'
   return className
 }
+
+const assetsLinks = [
+  {
+    label: 'Tech Resources',
+    path: '/',
+  },
+  {
+    label: 'Design Resources',
+    path: '/',
+  },
+  //   {
+  //   label: 'Building a SaaS checklist',
+  //   path: '/'
+  // },
+]
+
+const learnLinks = [
+  {
+    label: 'Courses',
+    path: '/courses',
+  },
+  {
+    label: 'Blog',
+    path: '/blog',
+  },
+]
+
+const moreLinks = [
+  {
+    label: 'About',
+    path: '/about',
+  },
+  {
+    label: 'Links',
+    path: '/links',
+  },
+]
 </script>
 
 <template>
@@ -26,8 +84,10 @@ const getIconClass = () => {
         <div>katiaggpro@gmail.com</div>
 
         <div class="socials flex mt-10 justify-center md:justify-start">
-          <div v-for="(n, i) in socials" :key="i" :class="getIconClass()">
-            <div v-html="$feathericons[n].toSvg()"></div>
+          <div v-for="(n, i) in socials" :key="i" :class="getIconClass(i)">
+            <a :href="n.link" target="_blank"
+              ><div v-html="$feathericons[n.icon].toSvg()"></div
+            ></a>
           </div>
         </div>
       </div>
@@ -36,9 +96,11 @@ const getIconClass = () => {
         <div class="small-title pt-2">ASSETS</div>
         <div class="footer-links mt-2 md:mt-6">
           <ul class="flex flex-col items-center md:items-start">
-            <li class="hover-link">Tech Resources</li>
-            <li class="hover-link">Asset 2</li>
-            <li class="hover-link">Asset 3</li>
+            <li v-for="(n, i) in assetsLinks" :key="i" class="hover-link">
+              <NuxtLink :to="n.path">
+                {{ n.label }}
+              </NuxtLink>
+            </li>
           </ul>
         </div>
       </div>
@@ -47,10 +109,11 @@ const getIconClass = () => {
         <div class="small-title pt-2">LEARN</div>
         <div class="footer-links mt-2 md:mt-6">
           <ul class="flex flex-col items-center md:items-start">
-            <li class="hover-link">Ebook</li>
-            <li class="hover-link">Courses</li>
-            <li class="hover-link">Blog</li>
-            <li class="hover-link">Videos</li>
+            <li v-for="(n, i) in learnLinks" :key="i" class="hover-link">
+              <NuxtLink :to="n.path">
+                {{ n.label }}
+              </NuxtLink>
+            </li>
           </ul>
         </div>
       </div>
@@ -59,9 +122,11 @@ const getIconClass = () => {
         <div class="small-title pt-2">MORE</div>
         <div class="footer-links mt-2 md:mt-6">
           <ul class="flex flex-col items-center md:items-start">
-            <li class="hover-link">About</li>
-            <li class="hover-link">Terms of Service</li>
-            <li class="hover-link">Privacy Policy</li>
+            <li v-for="(n, i) in moreLinks" :key="i" class="hover-link">
+              <NuxtLink :to="n.path">
+                {{ n.label }}
+              </NuxtLink>
+            </li>
           </ul>
         </div>
       </div>

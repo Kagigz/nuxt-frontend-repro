@@ -103,8 +103,11 @@
           own company! I decided to jump ship and join a startup studio that
           would
           <span class="bold"> help me launch a startup from scratch </span> .
-          That's how Emera was born! With the help of OSS Ventures, which
-          introduced me to my co-founder as well, we're going to
+          That's how
+          <a href="https://emera.app" class="underlined-link">Emera</a> was
+          born! With the help of
+          <a href="https://oss.ventures" class="underlined-link">OSS Ventures</a
+          >, which introduced me to my co-founder as well, we're going to
           <span class="bold">
             revolutionize client-supplier relationships in the B2B Manufacturing
             Industry.
