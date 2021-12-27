@@ -4,16 +4,19 @@ const updates = [
     label: 'ASSETS',
     content: '',
     icon: 'chevron-right',
+    linkTo: 'assets',
   },
   {
     label: 'COURSES',
     content: '',
     icon: 'chevron-left',
+    linkTo: 'courses',
   },
   {
     label: 'POSTS',
     content: '',
     icon: 'chevron-right',
+    linkTo: 'blog',
   },
 ]
 

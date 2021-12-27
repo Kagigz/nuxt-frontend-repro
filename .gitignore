@@ -5,3 +5,4 @@ dist
 wp-dist
 .output
 .vscode
+**/.DS_Store

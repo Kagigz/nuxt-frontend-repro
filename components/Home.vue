@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Welcome />
-    <Updates />
-    <Newsletter />
+    <HomeWelcome />
+    <HomeUpdates />
+    <HomeNewsletter />
   </div>
 </template>
