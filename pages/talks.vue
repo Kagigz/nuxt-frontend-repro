@@ -1,0 +1,3 @@
+<template>
+  <TalksHistory />
+</template>

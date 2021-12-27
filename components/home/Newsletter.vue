@@ -1,23 +1,23 @@
 <script setup lang="ts">
 const latestNews = [
   {
-    name: 'My journey from 0 to MVP of a SaaS product in 3 months',
-    link: '',
-  },
-  {
     name: 'Transitioning from Software Engineer to CTO',
     link: '',
   },
   {
-    name: 'The technical stack I’m using as an early-stage CTO',
+    name: "The technical stack I'm using as an early-stage CTO",
     link: '',
   },
   {
-    name: 'How to build a personal website or blog for free with the JamStack',
+    name: "What's hard about doing product when you come from Engineering",
     link: '',
   },
   {
-    name: 'UI Design Resources to kickstart your project',
+    name: 'My process to learn new skills online',
+    link: '',
+  },
+  {
+    name: 'Best Engineering Practices I brought from Microsoft to my startup',
     link: '',
   },
   {

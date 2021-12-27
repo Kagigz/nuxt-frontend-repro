@@ -1,0 +1,3 @@
+<template>
+  <LinksHome />
+</template>

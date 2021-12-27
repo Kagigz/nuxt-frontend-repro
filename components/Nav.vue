@@ -36,11 +36,11 @@ const links = [
 ]
 
 const linksMore = [
-  {
-    id: 'ebook',
-    path: 'ebook',
-    label: 'EBOOK',
-  },
+  //   {
+  //     id: 'ebook',
+  //     path: 'ebook',
+  //     label: 'EBOOK',
+  //   },
   {
     id: 'talks',
     path: 'talks',
