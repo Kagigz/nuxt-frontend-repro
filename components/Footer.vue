@@ -81,7 +81,7 @@ const moreLinks = [
       <div class="md:col-span-2 sm:col-span-3">
         <div class="medium-title">KATIA.GG</div>
         <div class="xs-title mt-6">CONTACT ME</div>
-        <div>katiaggpro@gmail.com</div>
+        <div>hello@katia.gg</div>
 
         <div class="socials flex mt-10 justify-center md:justify-start">
           <div v-for="(n, i) in socials" :key="i" :class="getIconClass(i)">

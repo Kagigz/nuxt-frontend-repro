@@ -46,7 +46,7 @@ const talks = [
 
 <template>
   <div class="min-h-screen md:py-8 md:px-12">
-    <h1 class="title mt-6 md:mt-16 ml-4 md:ml-10 mb-8">
+    <h1 class="title mt-10 md:mt-16 ml-4 md:ml-10 mb-8">
       TALKS & PRESENTATIONS.
     </h1>
     <div class="container w-full h-full py-12 px-6 md:px-12">
@@ -66,20 +66,11 @@ const talks = [
             md:left-12
           "
         ></div>
-        <div class="mb-8 flex items-center w-full px-4 md:px-8">
+        <div class="mb-8 flex items-center w-full px-2 md:px-10">
           <div
-            class="
-              z-20
-              flex
-              items-center
-              order-1
-              background-grey
-              w-8
-              h-8
-              rounded-full
-            "
+            class="z-20 flex items-center background-grey w-4 h-4 rounded-full"
           ></div>
-          <div class="order-1 w-1/2 px-6 md:px-12 py-4">
+          <div class="w-full md:w-1/2 px-6 md:px-12 py-4">
             <h3 class="mb-1 bold red medium-text">
               {{ n.event }}
             </h3>
