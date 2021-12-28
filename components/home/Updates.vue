@@ -21,7 +21,7 @@ const updates = [
 ]
 
 const getUpdateBlockClass = (i: number) => {
-  let className = 'w-full h-96 px-8 update-block'
+  let className = 'w-full h-96 px-2 md:px-4 lg:px-8 update-block'
   if (i % 2 === 0) className += ' red-drop'
   else className += ' red-drop-reverse'
 

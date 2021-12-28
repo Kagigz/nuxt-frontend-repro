@@ -38,7 +38,9 @@ const latestNews = [
       <div
         class="big-cta red-hover mt-6 click flex items-center justify-center"
       >
-        <div>GET TO KNOW ME</div>
+        <div>
+          <NuxtLink to="/about"> GET TO KNOW ME </NuxtLink>
+        </div>
         <div
           class="ml-2 flex items-center"
           v-html="$feathericons['chevron-right'].toSvg()"
@@ -88,35 +90,8 @@ const latestNews = [
           If this sounds interesting to you, subscribe to get the latest updates
           and get my <span class="bold">free Tech Resources List!</span>
         </div>
-        <div class="mt-6 md:text-right">
-          <div class="form-item">
-            <div class="dark-grey">First name</div>
-            <input
-              class="input focus:outline-none"
-              type="text"
-              name="firstName"
-            />
-          </div>
-          <div class="form-item">
-            <div class="dark-grey">Last name</div>
-            <input
-              class="input focus:outline-none"
-              type="text"
-              name="lastName"
-            />
-          </div>
-          <div class="form-item">
-            <div class="dark-grey">Email</div>
-            <input class="input focus:outline-none" type="email" name="Email" />
-          </div>
-        </div>
-        <div class="mt-6 flex justify-center">
-          <button class="button black-drop cta">SUSCRIBE</button>
-        </div>
+        <NewsletterForm />
       </div>
     </div>
   </div>
 </template>
-
-<style>
-</style>
