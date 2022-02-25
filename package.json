@@ -7,14 +7,19 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.10.0",
+    "@apollo/client": "^3.5.9",
     "@iconify/json": "^1.1.431",
     "@nuxt/bridge-edge": "latest",
     "@nuxt/kit-edge": "latest",
     "@nuxtclub/feathericons": "^1.0.0",
     "@unocss/nuxt": "^0.11.1",
+    "@vue/apollo-composable": "^4.0.0-alpha.15",
     "@vue/runtime-dom": "^3.2.22",
     "@vueuse/core": "^6.9.1",
     "eslint": "^8.2.0",
+    "graphql": "^16.3.0",
+    "graphql-tag": "^2.12.6",
+    "isomorphic-fetch": "^3.0.0",
     "nuxi-edge": "latest",
     "nuxt-edge": "latest",
     "nuxt-windicss": "^2.2.1",
@@ -25,5 +30,8 @@
     "overrides": {
       "vue-demi": "0.12.0"
     }
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6"
   }
 }

@@ -4,7 +4,9 @@
     "types": [
       "node",
       "unplugin-vue2-script-setup/types",
-      "@nuxtclub/feathericons"
+      "@nuxtclub/feathericons",
+      "@nuxt/types",
+      "@nuxtjs/axios"
     ]
   },
   "vueCompilerOptions": {

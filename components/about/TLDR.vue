@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted } from '@vue/runtime-dom'
+
 </script>
 
 <template>
@@ -6,11 +8,11 @@
     <div class="md:h-screen md:order-last">
       <div class="h-full flex flex-col justify-center items-end pt-16">
         <div class="px-24 md:px-48 text-justify pb-16 md:pb-2">
-          <div class="title">TL;DR</div>
-          <p class="tldr-paragraph">Learned to code when I was 10 years old.</p>
+          <div class="title">
+            TL;DR
+          </div>
           <p class="tldr-paragraph">
-            Fell in love with it young which allowed me to stay motivated
-            through the bias people threw at me.
+            Fell in love with code when I was 10 years old.
           </p>
           <p class="tldr-paragraph">
             Pursued Software Engineering studies at Telecom SudParis (France).
@@ -24,7 +26,7 @@
             startup studio.
           </p>
           <p class="tldr-paragraph">
-            Now CTO of Emera, and creating content on the side.
+            Now CTO of Emera, which I co-founded in April 2021.
           </p>
           <NuxtLink to="#presentation">
             <div
@@ -39,7 +41,9 @@
                 click
               "
             >
-              <div class="mb-1">READ MY STORY</div>
+              <div class="mb-1">
+                READ MY STORY
+              </div>
               <div v-html="$feathericons['arrow-down'].toSvg()"></div>
             </div>
           </NuxtLink>
@@ -47,7 +51,7 @@
       </div>
     </div>
     <div class="md:h-screen md:w-2/6">
-      <img src="/assets/imgs/me/about-photo.png" class="picture" />
+      <img src="/assets/imgs/me/about-photo2.png" class="picture" />
     </div>
   </div>
 </template>

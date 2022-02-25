@@ -1,4 +1,29 @@
 <script setup lang="ts">
+import { onMounted } from '@vue/runtime-dom'
+import { getTalks } from '~~/api'
+// import { getTalks } from '~~/api'
+
+// import { useQuery, useResult } from '@vue/apollo-composable'
+// import { GET_POSTS, GET_TALKS } from '@/api/queries'
+
+// const getTalks = () => {
+//   return useQuery(GET_TALKS)
+// }
+
+const talks2 = reactive({
+  data: [],
+  loading: false,
+})
+
+const loadData = async() => {
+  talks2.loading = true
+  const { data, pending, error } = await useLazyFetch('http://localhost:1337/talks')
+  talks2.data = data
+  console.log(data.value)
+
+  talks2.loading = false
+}
+
 const talks = [
   {
     date: '12-2020',
@@ -19,7 +44,7 @@ const talks = [
     event: 'All Around Azure (France)',
     title: 'Boost client engagement with Conversational AI',
     description:
-      "Discover Azure's Conversational AI platform to build bots for your customers \n(Disclaimer: this talk was not created by me and I only delivered it in French)",
+      'Discover Azure\'s Conversational AI platform to build bots for your customers \n(Disclaimer: this talk was not created by me and I only delivered it in French)',
   },
   {
     date: '04-2020',
@@ -42,21 +67,34 @@ const talks = [
       'Hear from a CTO, a Cloud architect & a Software Engineer about the challenges they face in their jobs',
   },
 ]
+
+// const { data: talks2, refresh } = useLazyFetch('http://localhost:1337/api/talks')
+// console.log(talks2.value)
+loadData()
+
 </script>
 
 <template>
-  <div class="min-h-screen md:py-8 md:px-12">
-    <h1 class="title mt-10 md:mt-16 ml-4 md:ml-10 mb-8">
-      TALKS & PRESENTATIONS.
-    </h1>
-    <div class="container w-full h-full py-12 px-6 md:px-12">
-      <div
-        v-for="(n, i) in talks"
-        :key="i"
-        class="relative wrap overflow-hidden h-full"
-      >
+  <div>
+    <div v-if="!talks2">
+    </div>
+    <div v-else>
+      <div v-for="talk in talks2.data" :key="talk.id">
+        {{ talk.description }}
+      </div>
+    </div>
+    <div class="min-h-screen md:py-8 md:px-12">
+      <h1 class="title mt-10 md:mt-16 ml-4 md:ml-10 mb-8">
+        TALKS & PRESENTATIONS.
+      </h1>
+      <div class="container w-full h-full py-12 px-6 md:px-12">
         <div
-          class="
+          v-for="(n, i) in talks"
+          :key="i"
+          class="relative wrap overflow-hidden h-full"
+        >
+          <div
+            class="
             border-2-2
             absolute
             border-opacity-20 border-gray-700
@@ -65,24 +103,25 @@ const talks = [
             left-4
             md:left-12
           "
-        ></div>
-        <div class="mb-8 flex items-center w-full px-2 md:px-10">
-          <div
-            class="z-20 flex items-center background-grey w-4 h-4 rounded-full"
           ></div>
-          <div class="w-full md:w-1/2 px-6 md:px-12 py-4">
-            <h3 class="mb-1 bold red medium-text">
-              {{ n.event }}
-            </h3>
-            <h4 v-if="n.title" class="medium-text mt-1 mb-1">
-              {{ n.title }}
-            </h4>
-            <div class="mb-2 dark-grey small-text">
-              {{ n.date }}
+          <div class="mb-8 flex items-center w-full px-2 md:px-10">
+            <div
+              class="z-20 flex items-center background-grey w-4 h-4 rounded-full"
+            ></div>
+            <div class="w-full md:w-1/2 px-6 md:px-12 py-4">
+              <h3 class="mb-1 bold red medium-text">
+                {{ n.event }}
+              </h3>
+              <h4 v-if="n.title" class="medium-text mt-1 mb-1">
+                {{ n.title }}
+              </h4>
+              <div class="mb-2 dark-grey small-text">
+                {{ n.date }}
+              </div>
+              <p class="paragraph">
+                {{ n.description }}
+              </p>
             </div>
-            <p class="paragraph">
-              {{ n.description }}
-            </p>
           </div>
         </div>
       </div>

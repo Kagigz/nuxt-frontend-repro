@@ -79,21 +79,28 @@ const moreLinks = [
     <div class="grid gap-y-8 md:grid-cols-5 sm:grid-cols-3">
       <!-- CONTACT -->
       <div class="md:col-span-2 sm:col-span-3">
-        <div class="medium-title">KATIA.GG</div>
-        <div class="xs-title mt-6">CONTACT ME</div>
+        <div class="medium-title">
+          KATIA.GG
+        </div>
+        <div class="xs-title mt-6">
+          CONTACT ME
+        </div>
         <div>hello@katia.gg</div>
 
         <div class="socials flex mt-10 justify-center md:justify-start">
           <div v-for="(n, i) in socials" :key="i" :class="getIconClass(i)">
-            <a :href="n.link" target="_blank"
-              ><div v-html="$feathericons[n.icon].toSvg()"></div
-            ></a>
+            <a
+              :href="n.link"
+              target="_blank"
+            ><div v-html="$feathericons[n.icon].toSvg()"></div></a>
           </div>
         </div>
       </div>
       <!-- ASSETS -->
       <div>
-        <div class="small-title pt-2">ASSETS</div>
+        <div class="small-title pt-2">
+          ASSETS
+        </div>
         <div class="footer-links mt-2 md:mt-6">
           <ul class="flex flex-col items-center md:items-start">
             <li v-for="(n, i) in assetsLinks" :key="i" class="hover-link">
@@ -106,7 +113,9 @@ const moreLinks = [
       </div>
       <!-- LEARN -->
       <div>
-        <div class="small-title pt-2">LEARN</div>
+        <div class="small-title pt-2">
+          LEARN
+        </div>
         <div class="footer-links mt-2 md:mt-6">
           <ul class="flex flex-col items-center md:items-start">
             <li v-for="(n, i) in learnLinks" :key="i" class="hover-link">
@@ -119,7 +128,9 @@ const moreLinks = [
       </div>
       <!-- MORE -->
       <div>
-        <div class="small-title pt-2">MORE</div>
+        <div class="small-title pt-2">
+          MORE
+        </div>
         <div class="footer-links mt-2 md:mt-6">
           <ul class="flex flex-col items-center md:items-start">
             <li v-for="(n, i) in moreLinks" :key="i" class="hover-link">
