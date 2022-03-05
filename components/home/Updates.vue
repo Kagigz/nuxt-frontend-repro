@@ -4,19 +4,19 @@ const updates = [
     label: 'ASSETS',
     content: '',
     icon: 'chevron-right',
-    linkTo: 'assets',
+    linkTo: '/assets',
   },
   {
     label: 'COURSES',
     content: '',
     icon: 'chevron-left',
-    linkTo: 'courses',
+    linkTo: '/courses',
   },
   {
     label: 'POSTS',
     content: '',
     icon: 'chevron-right',
-    linkTo: 'blog',
+    linkTo: '/blog',
   },
 ]
 
@@ -46,7 +46,9 @@ const getUpdateIconClass = (i: number) => {
   <div id="updates" class="background-black pt-24 pb-12 text-center">
     <!-- MONTHLY UPDATE -->
     <div>
-      <div class="title white-filled">MONTHLY UPDATE</div>
+      <div class="title white-filled">
+        MONTHLY UPDATE
+      </div>
       <div class="mt-10 flex mx-8 md:mx-56 items-center">
         <div
           class="icon-big"
@@ -64,7 +66,9 @@ const getUpdateIconClass = (i: number) => {
     </div>
     <!-- LATEST NEWS -->
     <div>
-      <div class="title my-24">LATEST NEWS</div>
+      <div class="title my-24">
+        LATEST NEWS
+      </div>
       <div
         v-for="(n, i) in updates"
         :key="i"
@@ -85,7 +89,11 @@ const getUpdateIconClass = (i: number) => {
             md:mt-0
           "
         >
-          <div>SEE ALL {{ n.label }}</div>
+          <div>
+            <NuxtLink :to="n.linkTo">
+              SEE ALL {{ n.label }}
+            </NuxtLink>
+          </div>
           <div
             class="flex items-center ml-2 md:hidden"
             v-html="$feathericons['chevron-right'].toSvg()"
@@ -99,7 +107,9 @@ const getUpdateIconClass = (i: number) => {
     </div>
     <!-- SUSCRIBE CTA -->
     <div class="mt-24 flex flex-col justify-center items-center">
-      <div class="medium-text">Interested in getting updates?</div>
+      <div class="medium-text">
+        Interested in getting updates?
+      </div>
       <NuxtLink to="#newsletter">
         <div class="cta mt-3 click flex justify-center items-center flex-col">
           <div>SUSCRIBE TO MY NEWSLETTER</div>

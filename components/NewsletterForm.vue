@@ -1,5 +1,5 @@
 <template>
-  <div id="mc_embed_signup" class="mt-6 md:text-right">
+  <div id="mc_embed_signup" class="mt-6">
     <form
       id="mc-embedded-subscribe-form"
       action="https://katia.us20.list-manage.com/subscribe/post?u=4e0b10a8d894ca18687d7c450&amp;id=6ecb6d0205"

@@ -1,30 +1,13 @@
 <script setup lang="ts">
-import { onMounted } from '@vue/runtime-dom'
-import { getTalks } from '~~/api'
-// import { getTalks } from '~~/api'
+import qs from 'qs'
 
-// import { useQuery, useResult } from '@vue/apollo-composable'
-// import { GET_POSTS, GET_TALKS } from '@/api/queries'
-
-// const getTalks = () => {
-//   return useQuery(GET_TALKS)
-// }
-
-const talks2 = reactive({
-  data: [],
-  loading: false,
+const query = qs.stringify({
+  sort: ['createdAt:desc'],
 })
 
-const loadData = async() => {
-  talks2.loading = true
-  const { data, pending, error } = await useLazyFetch('http://localhost:1337/talks')
-  talks2.data = data
-  console.log(data.value)
+const { data: talks, refresh } = useLazyFetch(`/api/talks?${query}`, { baseURL: 'http://localhost:1337' })
 
-  talks2.loading = false
-}
-
-const talks = [
+const talksData = [
   {
     date: '12-2020',
     event: 'Asynconf',
@@ -68,33 +51,23 @@ const talks = [
   },
 ]
 
-// const { data: talks2, refresh } = useLazyFetch('http://localhost:1337/api/talks')
-// console.log(talks2.value)
-loadData()
-
 </script>
 
 <template>
   <div>
-    <div v-if="!talks2">
-    </div>
-    <div v-else>
-      <div v-for="talk in talks2.data" :key="talk.id">
-        {{ talk.description }}
-      </div>
-    </div>
     <div class="min-h-screen md:py-8 md:px-12">
       <h1 class="title mt-10 md:mt-16 ml-4 md:ml-10 mb-8">
         TALKS & PRESENTATIONS.
       </h1>
       <div class="container w-full h-full py-12 px-6 md:px-12">
-        <div
-          v-for="(n, i) in talks"
-          :key="i"
-          class="relative wrap overflow-hidden h-full"
-        >
+        <div v-if="talks">
           <div
-            class="
+            v-for="talk in talks.data"
+            :key="talk.id"
+            class="relative wrap overflow-hidden h-full"
+          >
+            <div
+              class="
             border-2-2
             absolute
             border-opacity-20 border-gray-700
@@ -103,24 +76,25 @@ loadData()
             left-4
             md:left-12
           "
-          ></div>
-          <div class="mb-8 flex items-center w-full px-2 md:px-10">
-            <div
-              class="z-20 flex items-center background-grey w-4 h-4 rounded-full"
             ></div>
-            <div class="w-full md:w-1/2 px-6 md:px-12 py-4">
-              <h3 class="mb-1 bold red medium-text">
-                {{ n.event }}
-              </h3>
-              <h4 v-if="n.title" class="medium-text mt-1 mb-1">
-                {{ n.title }}
-              </h4>
-              <div class="mb-2 dark-grey small-text">
-                {{ n.date }}
+            <div class="mb-8 flex items-center w-full px-2 md:px-10">
+              <div
+                class="z-20 flex items-center background-grey w-4 h-4 rounded-full"
+              ></div>
+              <div class="w-full md:w-1/2 px-6 md:px-12 py-4">
+                <h3 v-if="talk.attributes.event" class="mb-1 bold red medium-text">
+                  {{ talk.attributes.event }}
+                </h3>
+                <h4 v-if="talk.attributes.title" class="medium-text mt-1 mb-1">
+                  {{ talk.attributes.title }}
+                </h4>
+                <div v-if="talk.attributes.date" class="mb-2 dark-grey small-text">
+                  {{ talk.attributes.date }}
+                </div>
+                <p v-if="talk.attributes.description" class="paragraph">
+                  {{ talk.attributes.description }}
+                </p>
               </div>
-              <p class="paragraph">
-                {{ n.description }}
-              </p>
             </div>
           </div>
         </div>
