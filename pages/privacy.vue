@@ -1,0 +1,3 @@
+<template>
+  <PrivacyHome />
+</template>

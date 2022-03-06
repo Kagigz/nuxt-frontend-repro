@@ -62,16 +62,43 @@ const learnLinks = [
   },
 ]
 
-const moreLinks = [
+const exploreLinks = [
   {
-    label: 'About',
+    label: 'Resources',
+    path: '/resources',
+  },
+  {
+    label: 'Blog',
+    path: '/blog',
+  },
+]
+
+const aboutLinks = [
+  {
+    label: 'My Story',
     path: '/about',
   },
+  {
+    label: 'Talks',
+    path: '/talks',
+  },
+]
+
+const moreLinks = [
   {
     label: 'Links',
     path: '/links',
   },
+  {
+    label: 'Privacy Policy',
+    path: '/privacy',
+  },
 ]
+
+// const { data: exploreLinks, refresh: refreshExplore } = useLazyFetch('/api/explore-link', { baseURL: 'http://localhost:1337' })
+// const { data: aboutLinks, refresh: refreshAbout } = useLazyFetch('/api/about-link', { baseURL: 'http://localhost:1337' })
+// const { data: moreLinks, refresh: refreshMore } = useLazyFetch('/api/more-link', { baseURL: 'http://localhost:1337' })
+
 </script>
 
 <template>
@@ -96,14 +123,14 @@ const moreLinks = [
           </div>
         </div>
       </div>
-      <!-- ASSETS -->
+      <!-- EXPLORE -->
       <div>
         <div class="small-title pt-2">
-          ASSETS
+          EXPLORE
         </div>
         <div class="footer-links mt-2 md:mt-6">
-          <ul class="flex flex-col items-center md:items-start">
-            <li v-for="(n, i) in assetsLinks" :key="i" class="hover-link">
+          <ul v-if="exploreLinks" class="flex flex-col items-center md:items-start">
+            <li v-for="(n, i) in exploreLinks" :key="i" class="hover-link">
               <NuxtLink :to="n.path">
                 {{ n.label }}
               </NuxtLink>
@@ -111,14 +138,14 @@ const moreLinks = [
           </ul>
         </div>
       </div>
-      <!-- LEARN -->
+      <!-- ABOUT -->
       <div>
         <div class="small-title pt-2">
-          LEARN
+          ABOUT
         </div>
         <div class="footer-links mt-2 md:mt-6">
-          <ul class="flex flex-col items-center md:items-start">
-            <li v-for="(n, i) in learnLinks" :key="i" class="hover-link">
+          <ul v-if="aboutLinks" class="flex flex-col items-center md:items-start">
+            <li v-for="(n, i) in aboutLinks" :key="i" class="hover-link">
               <NuxtLink :to="n.path">
                 {{ n.label }}
               </NuxtLink>
@@ -132,7 +159,7 @@ const moreLinks = [
           MORE
         </div>
         <div class="footer-links mt-2 md:mt-6">
-          <ul class="flex flex-col items-center md:items-start">
+          <ul v-if="moreLinks" class="flex flex-col items-center md:items-start">
             <li v-for="(n, i) in moreLinks" :key="i" class="hover-link">
               <NuxtLink :to="n.path">
                 {{ n.label }}

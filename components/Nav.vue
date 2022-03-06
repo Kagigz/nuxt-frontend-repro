@@ -19,15 +19,15 @@ const links = [
     label: 'ABOUT',
   },
   {
-    id: 'assets',
-    path: 'assets',
-    label: 'ASSETS',
+    id: 'resources',
+    path: 'resources',
+    label: 'RESOURCES',
   },
-  {
-    id: 'courses',
-    path: 'courses',
-    label: 'COURSES',
-  },
+  // {
+  //   id: 'courses',
+  //   path: 'courses',
+  //   label: 'COURSES',
+  // },
   {
     id: 'blog',
     path: 'blog',

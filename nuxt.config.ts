@@ -16,11 +16,10 @@ export default defineNuxtConfig({
   //     '@vue/apollo-composable',
   //   ],
   // },
-  css: ['~/styles/main.scss', '~/styles/main.scss'],
+  css: ['~/styles/main.scss'],
   target: 'static',
   components: true,
   bridge: {
-    meta: true,
     vite: true,
   },
   router: {
@@ -50,5 +49,4 @@ export default defineNuxtConfig({
       return { x: 0, y: 0 }
     },
   },
-  plugins: ['~/plugins/apolloClient.ts'],
 })

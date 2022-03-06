@@ -1,23 +1,23 @@
 <script setup lang="ts">
 const updates = [
   {
-    label: 'ASSETS',
+    label: 'RESOURCES',
     content: '',
     icon: 'chevron-right',
-    linkTo: '/assets',
-  },
-  {
-    label: 'COURSES',
-    content: '',
-    icon: 'chevron-left',
-    linkTo: '/courses',
+    linkTo: '/resources',
   },
   {
     label: 'POSTS',
     content: '',
-    icon: 'chevron-right',
+    icon: 'chevron-left',
     linkTo: '/blog',
   },
+  // {
+  //   label: 'POSTS',
+  //   content: '',
+  //   icon: 'chevron-right',
+  //   linkTo: '/blog',
+  // },
 ]
 
 const getUpdateBlockClass = (i: number) => {
@@ -40,6 +40,9 @@ const getUpdateIconClass = (i: number) => {
   else className += ' mr-2 md:order-first'
   return className
 }
+
+const { data: monthlyUpdate, refresh } = useLazyFetch('/api/monthly-update', { baseURL: 'http://localhost:1337' })
+
 </script>
 
 <template>
@@ -54,9 +57,8 @@ const getUpdateIconClass = (i: number) => {
           class="icon-big"
           v-html="$feathericons['chevron-right'].toSvg()"
         ></div>
-        <p class="paragraph medium-text mx-10">
-          For the beginning of this year, I've set up new processes to be able
-          to produce more content, more frequently. Stay tuned!
+        <p v-if="monthlyUpdate" class="paragraph medium-text mx-10">
+          {{ monthlyUpdate.data.attributes.update }}
         </p>
         <div
           class="icon-big"

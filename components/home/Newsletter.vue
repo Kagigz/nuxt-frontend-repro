@@ -1,30 +1,40 @@
 <script setup lang="ts">
-const latestNews = [
-  {
-    name: 'Transitioning from Software Engineer to CTO',
-    link: '',
-  },
-  {
-    name: "The technical stack I'm using as an early-stage CTO",
-    link: '',
-  },
-  {
-    name: "What's hard about doing product when you come from Engineering",
-    link: '',
-  },
-  {
-    name: 'My process to learn new skills online',
-    link: '',
-  },
-  {
-    name: 'Best Engineering Practices I brought from Microsoft to my startup',
-    link: '',
-  },
-  {
-    name: 'What I learned during my 1st year working at Microsoft',
-    link: '',
-  },
-]
+
+import qs from 'qs'
+
+const query = qs.stringify({
+  sort: ['createdAt:desc'],
+})
+
+// const latestNews = [
+//   {
+//     name: 'Transitioning from Software Engineer to CTO',
+//     link: '',
+//   },
+//   {
+//     name: 'The technical stack I\'m using as an early-stage CTO',
+//     link: '',
+//   },
+//   {
+//     name: 'What\'s hard about doing product when you come from Engineering',
+//     link: '',
+//   },
+//   {
+//     name: 'My process to learn new skills online',
+//     link: '',
+//   },
+//   {
+//     name: 'Best Engineering Practices I brought from Microsoft to my startup',
+//     link: '',
+//   },
+//   {
+//     name: 'What I learned during my 1st year working at Microsoft',
+//     link: '',
+//   },
+// ]
+
+const { data: latestNews, refresh } = useLazyFetch(`/api/latest-news?${query}`, { baseURL: 'http://localhost:1337' })
+
 </script>
 
 <template>
@@ -39,7 +49,9 @@ const latestNews = [
         class="big-cta red-hover mt-6 click flex items-center justify-center"
       >
         <div>
-          <NuxtLink to="/about"> GET TO KNOW ME </NuxtLink>
+          <NuxtLink to="/about">
+            GET TO KNOW ME
+          </NuxtLink>
         </div>
         <div
           class="ml-2 flex items-center"
@@ -67,9 +79,9 @@ const latestNews = [
         <div class="text-center md:text-left">
           Some of the previous things I talked about...
         </div>
-        <ul class="pl-6 mt-4 flex flex-col items-start">
+        <ul v-if="latestNews" class="pl-6 mt-4 flex flex-col items-start">
           <li
-            v-for="(n, i) in latestNews"
+            v-for="(n, i) in latestNews.data"
             :key="i"
             class="py-1 flex items-center"
           >
@@ -77,9 +89,9 @@ const latestNews = [
               class="pink mr-2 flex items-center"
               v-html="$feathericons['chevron-right'].toSvg()"
             ></div>
-            <NuxtLink :to="n.link" class="hover-link">
-              {{ n.name }}
-            </NuxtLink>
+            <a :href="n.attributes.link" class="hover-link" target="_blank">
+              {{ n.attributes.title }}
+            </a>
           </li>
         </ul>
       </div>
@@ -88,7 +100,7 @@ const latestNews = [
       <div class="md:col-span-3">
         <div class="red text-center">
           If this sounds interesting to you, subscribe to get the latest updates
-          and get my <span class="bold">free Tech Resources List!</span>
+          <!-- and get my <span class="bold">free Tech Resources List!</span> -->
         </div>
         <NewsletterForm />
       </div>

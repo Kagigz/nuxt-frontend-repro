@@ -24,9 +24,11 @@ const setImgIndex = (event: any) => {
   let index = 1
   if (deg >= -180 && deg < -135) {
     index = 12
-  } else if (deg >= -135 && deg < -45) {
+  }
+  else if (deg >= -135 && deg < -45) {
     index = 1
-  } else {
+  }
+  else {
     for (let i = 0; i < zones.length; i++)
       if (deg > zones[i] && deg <= zones[i + 1]) index = i + 2
   }
@@ -55,14 +57,16 @@ const getArrowClass = () => {
     <div class="md:h-screen md:order-last">
       <div class="h-full flex flex-col justify-center items-center pt-16">
         <div class="title">
-          <div class="red-filled mb-8">HELLO THERE</div>
+          <div class="red-filled mb-8">
+            HELLO THERE
+          </div>
         </div>
         <div class="px-24 text-center">
           <p class="paragraph">
             My name is <span class="bold">Katia Gil Guzman</span>, and I'm a
-            <span class="bold"
-              >French Software Engineer turned Entrepreneur</span
-            >. After working at <span class="bold">Microsoft for 3 years</span>,
+            <span
+              class="bold"
+            >French Software Engineer turned Entrepreneur</span>. After working at <span class="bold">Microsoft for 3 years</span>,
             I am now the <span class="bold">CTO of Emera</span>, a startup I
             co-founded in April 2021. I love
             <span class="bold">learning new skills</span>, especially when they
@@ -83,7 +87,9 @@ const getArrowClass = () => {
               click
             "
           >
-            <div class="mb-1">LATEST NEWS</div>
+            <div class="mb-1">
+              LATEST NEWS
+            </div>
             <div v-html="$feathericons['arrow-down'].toSvg()"></div>
           </div>
         </NuxtLink>
