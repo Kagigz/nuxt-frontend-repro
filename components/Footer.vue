@@ -64,12 +64,16 @@ const learnLinks = [
 
 const exploreLinks = [
   {
-    label: 'Resources',
-    path: '/resources',
-  },
-  {
     label: 'Blog',
     path: '/blog',
+  },
+  {
+    label: 'Talks',
+    path: '/talks',
+  },
+  {
+    label: 'Links',
+    path: '/links',
   },
 ]
 
@@ -103,8 +107,26 @@ const moreLinks = [
 
 <template>
   <div class="background-black px-16 pt-8 pb-4 text-center md:text-left">
-    <div class="grid gap-y-8 md:grid-cols-5 sm:grid-cols-3">
+    <div class="w-full md:flex justify-between">
       <!-- CONTACT -->
+      <div>
+        <div class="medium-title">
+          KATIA.GG
+        </div>
+        <div class="xs-title mt-6">
+          CONTACT ME
+        </div>
+        <div>hello@katia.gg</div>
+      </div>
+      <div class="socials flex mt-6 md:mt-2 justify-center md:justify-start">
+        <div v-for="(n, i) in socials" :key="i" :class="getIconClass(i)">
+          <a
+            :href="n.link"
+            target="_blank"
+          ><div v-html="$feathericons[n.icon].toSvg()"></div></a>
+        </div>
+      </div>
+    <!-- <div class="grid gap-y-8 md:grid-cols-5 sm:grid-cols-3">
       <div class="md:col-span-2 sm:col-span-3">
         <div class="medium-title">
           KATIA.GG
@@ -122,9 +144,9 @@ const moreLinks = [
             ><div v-html="$feathericons[n.icon].toSvg()"></div></a>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- EXPLORE -->
-      <div>
+      <!-- <div>
         <div class="small-title pt-2">
           EXPLORE
         </div>
@@ -137,9 +159,9 @@ const moreLinks = [
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <!-- ABOUT -->
-      <div>
+      <!-- <div>
         <div class="small-title pt-2">
           ABOUT
         </div>
@@ -152,9 +174,9 @@ const moreLinks = [
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <!-- MORE -->
-      <div>
+      <!-- <div>
         <div class="small-title pt-2">
           MORE
         </div>
@@ -167,9 +189,9 @@ const moreLinks = [
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </div>
-    <div class="text-center small-text mt-8 md:mt-4">
+    <div class="text-center small-text mt-6 md:mt-4">
       Made with ❤️ in 2021 by Katia Gil Guzman
     </div>
   </div>
