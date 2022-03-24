@@ -12,6 +12,7 @@
     "@nuxt/bridge-edge": "latest",
     "@nuxt/kit-edge": "latest",
     "@nuxtclub/feathericons": "^1.0.0",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@unocss/nuxt": "^0.11.1",
     "@vue/apollo-composable": "^4.0.0-alpha.15",
     "@vue/runtime-dom": "^3.2.22",

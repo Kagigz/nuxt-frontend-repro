@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/bridge-edge',
     '@nuxtclub/feathericons',
     '@nuxtjs/axios',
+    '@nuxtjs/google-analytics',
   ],
 
   // build: {
@@ -21,6 +22,9 @@ export default defineNuxtConfig({
   components: true,
   bridge: {
     vite: true,
+  },
+  googleAnalytics: {
+    id: 'G-42G9S0S1GY',
   },
   router: {
     scrollBehavior: async(to, from, savedPosition) => {
