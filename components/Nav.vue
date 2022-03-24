@@ -18,39 +18,6 @@ const links = [
     path: 'about',
     label: 'ABOUT',
   },
-  // {
-  //   id: 'resources',
-  //   path: 'resources',
-  //   label: 'RESOURCES',
-  // },
-  // {
-  //   id: 'courses',
-  //   path: 'courses',
-  //   label: 'COURSES',
-  // },
-  // {
-  //   id: 'blog',
-  //   path: 'blog',
-  //   label: 'BLOG',
-  // },
-]
-
-const linksMore = [
-  //   {
-  //     id: 'ebook',
-  //     path: 'ebook',
-  //     label: 'EBOOK',
-  //   },
-  {
-    id: 'talks',
-    path: 'talks',
-    label: 'TALKS',
-  },
-  {
-    id: 'links',
-    path: 'links',
-    label: 'LINKS',
-  },
 ]
 
 const updateScroll = () => {
@@ -92,30 +59,6 @@ onMounted(() => {
           >
             {{ n.label }}
           </NuxtLink>
-        </div>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown-button">
-            MORE
-            <div
-              class="flex items-center icon-small ml-1"
-              v-html="$feathericons['chevron-down'].toSvg()"
-            ></div>
-          </div>
-          <ul
-            class="py-1 nav-dropdown-menu md:mt-6 hidden"
-            aria-labelledby="dropdownButton"
-          >
-            <li v-for="n in linksMore" :key="n.id">
-              <NuxtLink
-                :class="`nav-link nav-dropdown-link ${
-                  route.name === n.id ? 'nav-link-selected' : ''
-                }`"
-                :to="`/${n.path}`"
-              >
-                {{ n.label }}
-              </NuxtLink>
-            </li>
-          </ul>
         </div>
       </div>
 

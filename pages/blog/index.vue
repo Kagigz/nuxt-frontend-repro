@@ -1,3 +1,0 @@
-<template>
-  <BlogHome />
-</template>

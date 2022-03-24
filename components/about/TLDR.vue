@@ -12,21 +12,9 @@ import { onMounted } from '@vue/runtime-dom'
             TL;DR
           </div>
           <p class="tldr-paragraph">
-            Fell in love with code when I was 10 years old.
-          </p>
-          <p class="tldr-paragraph">
-            Pursued Software Engineering studies at Telecom SudParis (France).
-          </p>
-          <p class="tldr-paragraph">
-            Did my end-of-studies internship at Microsoft and joined them
-            full-time afterwards.
-          </p>
-          <p class="tldr-paragraph">
-            Left Microsoft after 3 years to launch a startup with the help of a
-            startup studio.
-          </p>
-          <p class="tldr-paragraph">
-            Now CTO of Emera, which I co-founded in April 2021.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu semper orci. Nullam vestibulum nulla lorem, non maximus urna aliquam ultricies. Mauris sagittis augue ac enim rutrum lobortis. Sed et finibus est, vitae convallis ipsum. Fusce ut lectus est. Donec fermentum ipsum volutpat, ornare turpis at, posuere magna. Pellentesque commodo, tellus id sodales iaculis, orci libero gravida ante, ut mattis arcu nibh sed mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin velit ante, commodo a elementum sed, fringilla nec turpis.
+
+            Aenean interdum viverra felis sit amet porttitor. Mauris efficitur volutpat risus, et congue felis laoreet non. Cras et est at felis sagittis mollis id ac turpis. Vivamus semper massa non nulla suscipit, eget malesuada lectus rutrum. Praesent ac urna in purus pharetra ultricies ut non metus. Morbi sed accumsan urna, feugiat egestas tortor. Morbi venenatis aliquet dolor. Suspendisse ac neque dolor.
           </p>
           <NuxtLink to="#presentation">
             <div
@@ -51,7 +39,6 @@ import { onMounted } from '@vue/runtime-dom'
       </div>
     </div>
     <div class="md:h-screen md:w-2/6">
-      <img src="/assets/imgs/me/about-photo2.png" class="picture" />
     </div>
   </div>
 </template>
