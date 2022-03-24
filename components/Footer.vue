@@ -31,7 +31,7 @@ const setIconBounce = (index: number, bounce: boolean) => {
 }
 
 const getIconClass = (index: number) => {
-  let className = 'click mr-3'
+  let className = 'click mr-3 enlarge-hover'
   if (iconState.bounce[index]) className += ' animate-bounce-hover'
   return className
 }
@@ -192,7 +192,7 @@ const moreLinks = [
       </div> -->
     </div>
     <div class="text-center small-text mt-6 md:mt-4">
-      Made with ❤️ in 2021 by Katia Gil Guzman
+      Made with ❤️ by Katia Gil Guzman
     </div>
   </div>
 </template>

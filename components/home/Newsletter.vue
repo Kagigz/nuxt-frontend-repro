@@ -75,7 +75,7 @@ const { data: latestNews, refresh } = useLazyFetch(`/api/latest-news?${query}`, 
       "
     >
       <!-- NEWSLETTER TEASING -->
-      <div class="md:col-span-6 dark-grey">
+      <div class="md:col-span-5 dark-grey">
         <div class="text-center md:text-left">
           Some of the previous things I talked about...
         </div>
@@ -97,12 +97,14 @@ const { data: latestNews, refresh } = useLazyFetch(`/api/latest-news?${query}`, 
       </div>
 
       <!-- NEWSLETTER FORM -->
-      <div class="md:col-span-3">
+      <div class="md:col-span-4 justify-center">
         <div class="red text-center">
-          If this sounds interesting to you, subscribe to get the latest updates
+          If this sounds interesting to you, subscribe to get updates!
           <!-- and get my <span class="bold">free Tech Resources List!</span> -->
         </div>
-        <NewsletterForm />
+        <div class="sm:px-2 md:px-6 lg:px-12">
+          <NewsletterForm />
+        </div>
       </div>
     </div>
   </div>

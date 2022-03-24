@@ -5,15 +5,22 @@ const query = qs.stringify({
   sort: ['createdAt:desc'],
 })
 
-const { data: talks, refresh } = useLazyFetch(`/api/talks?${query}`, { baseURL: 'http://localhost:1337' })
+// const { data: talks, refresh } = useLazyFetch(`/api/talks?${query}`, { baseURL: 'http://localhost:1337' })
 
-const talksData = [
+const talks = [
+  {
+    date: '06-2022',
+    event: 'WomenTech Global Conference',
+    title: 'From the Corporate to the Startup world',
+    description:
+      'Learn what to expect when transitioning from the Corporate to the Startup world',
+  },
   {
     date: '12-2020',
     event: 'Asynconf',
     title: 'Create a bot for your videogames',
     description:
-      'Learn how to create a bot on Azure with the Bot Framework Composer & integrate it in Unity to use in your videogames.',
+      'Learn how to create a bot on Azure with the Bot Framework Composer & integrate it in Unity to use in your videogames',
   },
   {
     date: '12-2020',
@@ -62,8 +69,8 @@ const talksData = [
       <div class="container w-full h-full py-12 px-6 md:px-12">
         <div v-if="talks">
           <div
-            v-for="talk in talks.data"
-            :key="talk.id"
+            v-for="(talk, i) in talks"
+            :key="i"
             class="relative wrap overflow-hidden h-full"
           >
             <div
@@ -82,17 +89,17 @@ const talksData = [
                 class="z-20 flex items-center background-grey w-4 h-4 rounded-full"
               ></div>
               <div class="w-full md:w-1/2 px-6 md:px-12 py-4">
-                <h3 v-if="talk.attributes.event" class="mb-1 bold red medium-text">
-                  {{ talk.attributes.event }}
+                <h3 v-if="talk.event" class="mb-1 bold red medium-text">
+                  {{ talk.event }}
                 </h3>
-                <h4 v-if="talk.attributes.title" class="medium-text mt-1 mb-1">
-                  {{ talk.attributes.title }}
+                <h4 v-if="talk.title" class="medium-text mt-1 mb-1">
+                  {{ talk.title }}
                 </h4>
-                <div v-if="talk.attributes.date" class="mb-2 dark-grey small-text">
-                  {{ talk.attributes.date }}
+                <div v-if="talk.date" class="mb-2 dark-grey small-text">
+                  {{ talk.date }}
                 </div>
-                <p v-if="talk.attributes.description" class="paragraph">
-                  {{ talk.attributes.description }}
+                <p v-if="talk.description" class="paragraph">
+                  {{ talk.description }}
                 </p>
               </div>
             </div>

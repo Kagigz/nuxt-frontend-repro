@@ -213,6 +213,12 @@ body {
   color: $white;
   padding: 6px 12px;
   cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.button:hover{
+  transform: scale(1.05);
+  transition: transform .2s ease;
 }
 
 // Animations
@@ -222,3 +228,11 @@ body {
 	        animation: bounce-top 0.9s both;
 }
 
+.enlarge-hover{
+  transition: transform .2s ease;
+}
+
+.enlarge-hover:hover{
+  transform: scale(1.05);
+  transition: transform .2s ease;
+}

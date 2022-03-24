@@ -1,27 +1,33 @@
 <script setup lang="ts">
-const updates = [
-  {
-    label: 'RESOURCES',
-    content: '',
-    icon: 'chevron-right',
-    linkTo: '/resources',
-  },
-  {
-    label: 'POSTS',
-    content: '',
-    icon: 'chevron-left',
-    linkTo: '/blog',
-  },
-  // {
-  //   label: 'POSTS',
-  //   content: '',
-  //   icon: 'chevron-right',
-  //   linkTo: '/blog',
-  // },
-]
+import qs from 'qs'
+
+// const updates = [
+//   {
+//     label: 'RESOURCES',
+//     content: '',
+//     icon: 'chevron-right',
+//     linkTo: '/resources',
+//   },
+//   {
+//     label: 'POSTS',
+//     content: '',
+//     icon: 'chevron-left',
+//     linkTo: '/blog',
+//   },
+//   // {
+//   //   label: 'POSTS',
+//   //   content: '',
+//   //   icon: 'chevron-right',
+//   //   linkTo: '/blog',
+//   // },
+// ]
+
+const query = qs.stringify({
+  sort: ['createdAt:desc'],
+})
 
 const getUpdateBlockClass = (i: number) => {
-  let className = 'w-full h-96 px-2 md:px-4 lg:px-8 update-block'
+  let className = 'w-full px-2 py-4 md:px-4 lg:px-8 update-block'
   if (i % 2 === 0) className += ' red-drop'
   else className += ' red-drop-reverse'
 
@@ -42,6 +48,8 @@ const getUpdateIconClass = (i: number) => {
 }
 
 const { data: monthlyUpdate, refresh } = useLazyFetch('/api/monthly-update', { baseURL: 'http://localhost:1337' })
+
+const { data: updates, refresh: refresh2 } = useLazyFetch(`/api/updates?${query}`, { baseURL: 'http://localhost:1337' })
 
 </script>
 
@@ -71,16 +79,24 @@ const { data: monthlyUpdate, refresh } = useLazyFetch('/api/monthly-update', { b
       <div class="title my-24">
         LATEST NEWS
       </div>
-      <div
-        v-for="(n, i) in updates"
-        :key="i"
-        class="grid md:grid-cols-2 gap-y-6 mb-16 items-center"
-      >
-        <div :class="getUpdateClass(i)">
-          <div :class="getUpdateBlockClass(i)"></div>
-        </div>
+      <div v-if="updates">
         <div
-          class="
+          v-for="(n, i) in updates.data"
+          :key="i"
+          class="grid md:grid-cols-2 gap-y-6 mb-16 items-center"
+        >
+          <div :class="getUpdateClass(i)">
+            <div :class="getUpdateBlockClass(i)">
+              <div class="">
+                <img :src="n.attributes.imgLink" class="update-img" />
+              </div>
+              <p class="mt-4 mb-2">
+                {{ n.attributes.text }}
+              </p>
+            </div>
+          </div>
+          <div
+            class="
             flex
             items-center
             big-cta
@@ -90,20 +106,27 @@ const { data: monthlyUpdate, refresh } = useLazyFetch('/api/monthly-update', { b
             mt-4
             md:mt-0
           "
-        >
-          <div>
-            <NuxtLink :to="n.linkTo">
-              SEE ALL {{ n.label }}
-            </NuxtLink>
+          >
+            <div>
+              <a :href="n.attributes.link" target="_blank">
+                {{ n.attributes.linkLabel.toUpperCase() }}
+              </a>
+            </div>
+            <div
+              class="flex items-center ml-2 md:hidden"
+              v-html="$feathericons['chevron-right'].toSvg()"
+            ></div>
+            <div
+              v-if="i%2 == 0"
+              class="items-center hidden md:flex ml-2"
+              v-html="$feathericons['chevron-right'].toSvg()"
+            ></div>
+            <div
+              v-else
+              class="items-center hidden md:flex mr-2 md:order-first"
+              v-html="$feathericons['chevron-left'].toSvg()"
+            ></div>
           </div>
-          <div
-            class="flex items-center ml-2 md:hidden"
-            v-html="$feathericons['chevron-right'].toSvg()"
-          ></div>
-          <div
-            :class="getUpdateIconClass(i)"
-            v-html="$feathericons[n.icon].toSvg()"
-          ></div>
         </div>
       </div>
     </div>
@@ -127,5 +150,7 @@ const { data: monthlyUpdate, refresh } = useLazyFetch('/api/monthly-update', { b
 
 .update-block {
   background-color: $white;
+  color: $dark-grey;
 }
+
 </style>

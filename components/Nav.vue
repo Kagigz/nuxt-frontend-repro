@@ -18,21 +18,21 @@ const links = [
     path: 'about',
     label: 'ABOUT',
   },
-  {
-    id: 'resources',
-    path: 'resources',
-    label: 'RESOURCES',
-  },
+  // {
+  //   id: 'resources',
+  //   path: 'resources',
+  //   label: 'RESOURCES',
+  // },
   // {
   //   id: 'courses',
   //   path: 'courses',
   //   label: 'COURSES',
   // },
-  {
-    id: 'blog',
-    path: 'blog',
-    label: 'BLOG',
-  },
+  // {
+  //   id: 'blog',
+  //   path: 'blog',
+  //   label: 'BLOG',
+  // },
 ]
 
 const linksMore = [
